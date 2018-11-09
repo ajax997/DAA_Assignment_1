@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="714.0" prefWidth="971.0" stylesheets="@../css/dark.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <TextField fx:id="txtStudentList" layoutX="30.0" layoutY="51.0" onAction="#HandleTxtStudentListClick" prefHeight="27.0" prefWidth="441.0" />
+      <TextField fx:id="txtRoomList" layoutX="30.0" layoutY="110.0" prefHeight="27.0" prefWidth="441.0" />
+      <Button fx:id="btnRoomOpen" layoutX="482.0" layoutY="110.0" mnemonicParsing="false" onAction="#HandleBtnRoomClick" text="Open" />
+      <Button fx:id="btnStudentOpen" layoutX="482.0" layoutY="51.0" mnemonicParsing="false" onMouseClicked="#HandleBtnStudentOpen" text="Open" />
+      <Label layoutX="30.0" layoutY="24.0" text="Pick Student File" />
+      <Label layoutX="30.0" layoutY="86.0" text="List Room File" />
+      <TextArea fx:id="txtLogs" layoutX="546.0" layoutY="49.0" prefHeight="149.0" prefWidth="397.0" />
+      <Label layoutX="546.0" layoutY="24.0" text="Logs" />
+      <TextField fx:id="txtExportLocation" layoutX="30.0" layoutY="170.0" prefHeight="27.0" prefWidth="441.0" />
+      <Button fx:id="btnSave" layoutX="482.0" layoutY="170.0" mnemonicParsing="false" onAction="#HandleBtnSaveClick" prefHeight="27.0" prefWidth="51.0" text="Save" />
+      <TitledPane layoutX="29.0" layoutY="293.0" prefHeight="383.0" prefWidth="911.0" text="View Review">
+         <content>
+            <TableView fx:id="tbView" prefHeight="348.0" prefWidth="904.0">
+              <columns>
+                <TableColumn prefWidth="135.0" text="C1" />
+                <TableColumn prefWidth="74.0" text="C2" />
+              </columns>
+            </TableView>
+         </content>
+      </TitledPane>
+      <ComboBox fx:id="cbViewType" layoutX="30.0" layoutY="248.0" onAction="#handleViewTypeChosen" prefHeight="27.0" prefWidth="187.0" />
+      <ComboBox fx:id="cbViewAs" onAction="#handleViewAsChosen" layoutX="242.0" layoutY="248.0" prefHeight="27.0" prefWidth="177.0" />
+      <Label layoutX="30.0" layoutY="224.0" text="View Style" />
+      <Label layoutX="242.0" layoutY="224.0" text="As:" />
+      <Label layoutX="30.0" layoutY="147.0" text="Export Location" />
+      <Button fx:id="btnStart" layoutX="841.0" layoutY="248.0" mnemonicParsing="false" onAction="#HandleBtnStartClick" text="Start Arrange" />
+      <Button fx:id="btnClear" layoutX="840.0" layoutY="212.0" mnemonicParsing="false" onAction="#HandleBtnClearClick" prefHeight="27.0" prefWidth="103.0" text="Clear logs" />
+      <CheckBox fx:id="chkMiddleTermTest" layoutX="714.0" layoutY="253.0" mnemonicParsing="false" onAction="#HandleChkCheckedChanged" text="Mid-Term Test" />
+      <DatePicker fx:id="dtpicker" layoutX="546.0" layoutY="218.0" onAction="#HandleDatePickerPicked" prefHeight="27.0" prefWidth="151.0" promptText="Start Date" />
+      <CheckBox fx:id="chkSkipSunday" layoutX="714.0" layoutY="217.0" mnemonicParsing="false" onAction="#HandleChkSkipChanged" text="Skip Sunday" />
+      <ProgressBar fx:id="progressBar" layoutX="660.0" layoutY="683.0" prefHeight="5.0" prefWidth="281.0" progress="0.0" />
+      <Text layoutX="597.0" layoutY="697.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Process:" />
+   </children>
+</Pane>
